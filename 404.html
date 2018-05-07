@@ -22,7 +22,7 @@
     <meta name="author" content="Gabriela Motta">
     <meta name="keywords" content="">
 
-    <link rel="icon" href="/portfolio/favicon.png">
+    <link rel="icon" href="/favicon.png">
     
 
     
@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="/portfolio/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    <link rel="stylesheet" href="/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
     
     
 
@@ -71,7 +71,7 @@
   <article class="post">
     <h1>404 Not Found</h1>
     <p>Sorry, but we couldn't find the page you're looking for.</p>
-    <p>Please head back <a href="/portfolio/">home</a>.</p>
+    <p>Please head back <a href="/">home</a>.</p>
   </article>
 </main>
     
@@ -126,17 +126,18 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2015/07/hello-r-markdown/">
-                <h3 class="media-heading">Hello R Markdown</h3>
+              <a class="link-unstyled" href="/2018/05/eda-sense8/">
+                <h3 class="media-heading">EDA Sense8</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Jul 7, 2015
+                  May 5, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</div>
+              <div class="media-content hide-xs font-merryweather">Analisaremos os episódios da falecida série Sense8.
+Houve duas temporadas: quais foram os melhores episódios? A melhor temporada?
+episodes = read_csv(here(&quot;series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&gt;% filter(series_name == &quot;Sense8&quot;)  Quantas avaliações temos por episódio? Cada episódio foi avaliado por um número diferente de usuários do IMDB. Vejamos como é essa distribuição.
+episodes %&gt;% ggplot(aes(x = season, y = user_votes)) + geom_violin() + geom_jitter(width = .</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -145,16 +146,15 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2015/06/welcome-to-tranquilpeak-0.4.3-beta/">
-                <h3 class="media-heading">Welcome to Tranquilpeak 0.4.3-BETA</h3>
+              <a class="link-unstyled" href="/2018/05/problema-1---checkpoint-3---sua-an%C3%A1lise/">
+                <h3 class="media-heading">Problema 1 - Checkpoint 3 - Sua análise</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Jun 6, 2015
+                  May 5, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
-</p></div>
+              <div class="media-content hide-xs font-merryweather">A avaliação de um episódio crossover é melhor que a avaliação média dos outros episódios das séries envolvidas? Um crossover ficcional ocorre quando dois ou mais personagens de diferentes histórias e universos interagem. No mundo dos quadrinhos essa prática é bem comum, e as séries de tv baseadas em quadrinhos seguem a tradição. As séries Arrow, Flash e Legends of Tomorrow são situadas no universo compartilhado Arrowverse, e os crossovers são frequentes, permitindo a análise proposta nessa questão.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -163,16 +163,15 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2015/05/elements-showcase/">
-                <h3 class="media-heading">Elements showcase</h3>
+              <a class="link-unstyled" href="/1/01/">
+                <h3 class="media-heading"></h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  May 5, 2015
+                  Jan 1, 0001
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>Check out how Tranquilpeak theme display well HTML elements (title, paragraph, blockquote, table and more..). It&rsquo;s simple and elegant.
-</p></div>
+              <div class="media-content hide-xs font-merryweather">Problema 1 - Checkpoint 3 - Sua análise            code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -181,123 +180,15 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2015/05/cover-image-showcase/">
-                <h3 class="media-heading">Cover image showcase</h3>
+              <a class="link-unstyled" href="/1/01/">
+                <h3 class="media-heading"></h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  May 5, 2015
+                  Jan 1, 0001
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>Tranquilpeak integrate a unique &ldquo;cover image&rdquo; feature. Open this post to see how this feature sublimate your article.</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2015/03/highlighted-code-showcase/">
-                <h3 class="media-heading">highlighted code showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2015
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>Tranquilpeak Hugo theme have its own theme to highlight source code. It&rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2014/10/tags-plugins-showcase/">
-                <h3 class="media-heading">Tags plugins showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>This post is used to show how tag plugins are displayed. See <a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#tags">docs</a> for more info.
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2014/08/hidden-social-section-showcase/">
-                <h3 class="media-heading">Hidden social section showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>This post is used to show how a site looks if the social section is hidden.
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2014/08/hidden-tag-section-showcase/">
-                <h3 class="media-heading">Hidden tag section showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>This post is used to show how a site looks if the tag section is hidden.
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2014/08/hidden-pagination-showcase/">
-                <h3 class="media-heading">Hidden pagination showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>This post is used to show how a site looks if the pagination is hidden.
-</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/portfolio/portfolio/2014/08/video-integrations-showcase/">
-                <h3 class="media-heading">Video integrations showcase</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>Youtube and Vimeo videos are easily integrated thanks to tags plugins. Of course, you can add video other platforms like dailymotion.
-</p></div>
+              <div class="media-content hide-xs font-merryweather">EDA Sense8            code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -310,7 +201,7 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         13 posts found
+         4 posts found
       </p>
     </div>
   </div>
@@ -318,7 +209,7 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
   
     
-    <div id="cover" style="background-image:url('/portfolio/images/cover.jpg');"></div>
+    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
   
 
 
@@ -330,7 +221,7 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="/portfolio/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
 

@@ -1,0 +1,102 @@
+---
+title: "Problema 1 - Checkpoint 3 - Sua análise"
+output:
+  html_document:
+    code_folding: hide
+    df_print: paged
+    toc: yes
+    toc_float: yes
+  html_notebook:
+    toc: yes
+    toc_float: yes
+date: 2018-05-06
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(here)
+theme_set(theme_bw())
+```
+
+##A avaliação de um episódio crossover é melhor que a avaliação média dos outros episódios das séries envolvidas?
+
+Um crossover ficcional ocorre quando dois ou mais personagens de diferentes histórias e universos interagem. No mundo dos quadrinhos essa prática é bem comum, e as séries de tv baseadas em quadrinhos seguem a tradição. As séries Arrow, Flash e Legends of Tomorrow são situadas no universo compartilhado Arrowverse, e os crossovers são frequentes, permitindo a análise proposta nessa questão. Serão calculadas as avaliações médias para cada série, e depois comparadas com as avaliações de cada episódio crossover.
+
+dados = read_csv("C:/Users/gabim/Desktop/AD1/cdd-lab1-gabriela-motta/data/series_from_imdb.csv", 
+                    progress = FALSE,
+                    col_types = cols(.default = col_double(), 
+                                     series_name = col_character(), 
+                                     episode = col_character(), 
+                                     url = col_character(),
+                                     season = col_character())) %>% filter(series_name %in% c("Arrow", "Flash", "DCs Legends of Tomorrow"))
+Primeiramente vamos calcular a avaliação média para cada série.
+
+sumarios = dados %>% 
+    group_by(series_name) %>%
+    summarise(media = mean(user_rating))
+sumarios
+As médias ficaram entre 8.5 e 8.7.
+
+Vamos separar os episódios crossover, que para as séries Arrow e Flash sempre acontecem no 8º episódio da temporada, e para Legends of Tomorrow aconteceu no 7º episódio da segunda temporada. Como Arrow é a série mais antiga, os crossovers só começaram na sua terceira temporada. No total serão observados 7 episódios.
+
+crossovers_arrow = dados %>% filter(series_name %in% c("Arrow"), season == 3 | season == 4 | season == 5, season_ep == 8)
+crossovers_arrow
+
+crossovers_flash = dados %>% filter(series_name %in% c("Flash"), season_ep == 8)
+crossovers_flash
+
+crossovers_legends = dados %>% filter(series_name %in% c("DCs Legends of Tomorrow"), season == 2, season_ep == 7)
+crossovers_legends
+Agora podemos comparar as avaliações médias das séries com as avaliações dos 7 episódios crossover.
+
+plot1 <- ggplot(crossovers_arrow, aes(x = series_name, y = user_rating, ymin = 8.25, ymax = 9.5)) + 
+    geom_pointrange() + 
+    geom_pointrange(data = crossovers_flash) +
+    geom_pointrange(data = crossovers_legends) +
+    geom_point(data=sumarios, aes(x = sumarios$series_name, y = sumarios$media, color = "Avaliação Média"), size=2) +
+    geom_text(aes(label=episode),hjust=0, vjust=-0.5,position=position_jitter(width=0.1,height=0.1)) +
+    geom_text(data=crossovers_flash,aes(label=episode),hjust=0, vjust=0) +
+    geom_text(data=crossovers_legends,aes(label=episode),hjust=0, vjust=0) +
+    labs(x = "Série", y = "Avaliação dos Usuários", color="Legenda")
+
+plot1
+Podemos perceber que todos os episódios de crossover do Arrowverse apresentam avaliações bem acima das avaliações médias das séries, no intervalo de 9.1 a 9.4. Esses episódios geralmente são mais divulgados para atrair o público das outras séries, portanto podem obter mais votos. Também são episódios com mais ação, o que empolga o público.
+
+###Os episódios crossover recebem mais votos que os episódios normais?
+
+dados %>% 
+  ggplot(aes(x = season_ep, y = user_votes, color = season)) + 
+  geom_line() + 
+  geom_point() +
+  facet_grid(series_name ~ .) +
+  labs(color ="Temporada", x = "Número do Episódio", y = "Quantidade de Votos")
+
+É possível notar um aumento no número de votos nas proximidades do episódio 8, mas existem episódios com mais votos. Em Arrow o episódio seguinte ao crossover é o mais avaliado de toda a série, e em Flash existem vários picos, principalmente na primeira temporada. Legends of Tomorrow foi a única que apresentou mais votos em seu crossover, no episódio 7 da segunda temporada.
+
+##Séries que possuem mais de 20 episódios por temporada possuem uma avaliação irregular?
+
+Para essa questão serão avaliadas as séries Elementary, Lost e Os Feiticeiros de Waverly Place, que possuem no máximo 24, 25 e 30 episódios por temporada respectivamente.
+
+series = read_csv("C:/Users/gabim/Desktop/AD1/cdd-lab1-gabriela-motta/data/series_from_imdb.csv", 
+                    progress = FALSE,
+                    col_types = cols(.default = col_double(), 
+                                     series_name = col_character(), 
+                                     episode = col_character(), 
+                                     url = col_character(),
+                                     season = col_character())) %>% filter(series_name %in% c("Elementary", "Os Feiticeiros de Waverly Place", "Lost"))
+series %>% 
+    ggplot(aes(x = user_rating)) + 
+    geom_histogram(binwidth = .5, fill = "pink", color = "black") +
+    facet_grid(season ~ series_name) +
+    labs(x = "Avaliação dos Usuários", y = "Quantidade de Episódios")
+Com essa visualização podemos notar que Elementary possui avaliações bem regulares entre 8 e 8.5, exceto na quinta temporada, com notas variando entre 6.5 e 8.5. Lost possui as notas mais concentradas entre 8.5 e 9.0, porém possui algumas notas 7.0 e 9.5. Feiticeiros de Waverly Place possui uma grande irregularidade entre as temporadas 2 e 3. Na segunda temporada vemos uma grande quantidade de episódios com nota 7.5, mas na temporada seguinte os dados estão bem espalhados entre 6.0 e 8.0.
+
+###A irregularidade de avaliações é percebida ao longo das temporadas ou em pontos específicos?
+
+series %>% 
+  ggplot(aes(x = season_ep, y = user_rating, color = season)) + 
+  geom_line() + 
+  geom_point() +
+  facet_grid(series_name ~ .) +
+  labs(color ="Temporada", x = "Número do Episódio", y = "Avaliação dos Usuários")
+Avaliando os dados em um gráfico de linhas é fácil de perceber a irregularidade no final da quinta temporada de Elementary. Em Lost podemos ver uma grande oscilação nos episódios finais e do meio das temporadas 1, 2 e 3. A temporada 3 de Feiticeiros de Waverly Place é bem irregular, atingindo a pior nota aproximadamente na sua metade.
