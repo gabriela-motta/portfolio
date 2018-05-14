@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo tranquilpeak theme</title>
-    <link>/</link>
+    <link>https://gabriela-motta.github.io/</link>
     <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gabriela-motta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EDA Sense8</title>
-      <link>/2018/05/eda-sense8/</link>
+      <link>https://gabriela-motta.github.io/2018/05/eda-sense8/</link>
       <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/eda-sense8/</guid>
+      <guid>https://gabriela-motta.github.io/2018/05/eda-sense8/</guid>
       <description>Analisaremos os episódios da falecida série Sense8.
 Houve duas temporadas: quais foram os melhores episódios? A melhor temporada?
 episodes = read_csv(here(&amp;quot;series_from_imdb.csv&amp;quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&amp;gt;% filter(series_name == &amp;quot;Sense8&amp;quot;)  Quantas avaliações temos por episódio? Cada episódio foi avaliado por um número diferente de usuários do IMDB. Vejamos como é essa distribuição.
@@ -25,28 +25,28 @@ episodes %&amp;gt;% ggplot(aes(x = season, y = user_votes)) + geom_violin() + ge
     
     <item>
       <title>Problema 1 - Checkpoint 3 - Sua análise</title>
-      <link>/2018/05/problema-1---checkpoint-3---sua-an%C3%A1lise/</link>
+      <link>https://gabriela-motta.github.io/2018/05/problema-1---checkpoint-3---sua-an%C3%A1lise/</link>
       <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/problema-1---checkpoint-3---sua-an%C3%A1lise/</guid>
+      <guid>https://gabriela-motta.github.io/2018/05/problema-1---checkpoint-3---sua-an%C3%A1lise/</guid>
       <description>A avaliação de um episódio crossover é melhor que a avaliação média dos outros episódios das séries envolvidas? Um crossover ficcional ocorre quando dois ou mais personagens de diferentes histórias e universos interagem. No mundo dos quadrinhos essa prática é bem comum, e as séries de tv baseadas em quadrinhos seguem a tradição. As séries Arrow, Flash e Legends of Tomorrow são situadas no universo compartilhado Arrowverse, e os crossovers são frequentes, permitindo a análise proposta nessa questão.</description>
     </item>
     
     <item>
       <title></title>
-      <link>/1/01/</link>
+      <link>https://gabriela-motta.github.io/1/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/</guid>
+      <guid>https://gabriela-motta.github.io/1/01/</guid>
       <description>Problema 1 - Checkpoint 3 - Sua análise            code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
     <item>
       <title></title>
-      <link>/1/01/</link>
+      <link>https://gabriela-motta.github.io/1/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/</guid>
+      <guid>https://gabriela-motta.github.io/1/01/</guid>
       <description>EDA Sense8            code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
