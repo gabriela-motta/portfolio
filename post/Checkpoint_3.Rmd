@@ -2,7 +2,6 @@
 title: "Problema 1 - Checkpoint 3 - Sua análise"
 output:
   html_document:
-    code_folding: hide
     df_print: paged
     toc: yes
     toc_float: yes
