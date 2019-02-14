@@ -21,6 +21,7 @@ theme_set(theme_bw())
 
 Um crossover ficcional ocorre quando dois ou mais personagens de diferentes histórias e universos interagem. No mundo dos quadrinhos essa prática é bem comum, e as séries de tv baseadas em quadrinhos seguem a tradição. As séries Arrow, Flash e Legends of Tomorrow são situadas no universo compartilhado Arrowverse, e os crossovers são frequentes, permitindo a análise proposta nessa questão. Serão calculadas as avaliações médias para cada série, e depois comparadas com as avaliações de cada episódio crossover.
 
+```
 dados = read_csv("C:/Users/gabim/Desktop/AD1/cdd-lab1-gabriela-motta/data/series_from_imdb.csv", 
                     progress = FALSE,
                     col_types = cols(.default = col_double(), 
@@ -28,12 +29,15 @@ dados = read_csv("C:/Users/gabim/Desktop/AD1/cdd-lab1-gabriela-motta/data/series
                                      episode = col_character(), 
                                      url = col_character(),
                                      season = col_character())) %>% filter(series_name %in% c("Arrow", "Flash", "DCs Legends of Tomorrow"))
+```           
 Primeiramente vamos calcular a avaliação média para cada série.
 
+```
 sumarios = dados %>% 
     group_by(series_name) %>%
     summarise(media = mean(user_rating))
 sumarios
+```
 As médias ficaram entre 8.5 e 8.7.
 
 Vamos separar os episódios crossover, que para as séries Arrow e Flash sempre acontecem no 8º episódio da temporada, e para Legends of Tomorrow aconteceu no 7º episódio da segunda temporada. Como Arrow é a série mais antiga, os crossovers só começaram na sua terceira temporada. No total serão observados 7 episódios.
